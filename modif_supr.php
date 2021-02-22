@@ -140,7 +140,7 @@
                 <label>Modifier l'ASCII</label>
                 <div class="form-group">
                     <textarea rows="15" class="form-control" name="newascii" placeholder="">
-<?=$newContent = (isset($_POST['newascii']))) ? $newAscii: $content?>
+<?=$newContent = (isset($_POST['newascii'])) ? $newAscii: $content?>
                     </textarea>
                 </div>
                 
