@@ -1,7 +1,5 @@
-<?php
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -12,7 +10,7 @@
 
     <title>ASCII Art</title>
 
-    <?php include("include/css.php"); ?>
+    <?php require("require/css.php"); ?>
 
 </head>
 
@@ -20,7 +18,7 @@
 
 <div class="d-flex" id="wrapper">
     <!-- Menu -->
-    <?php include("include/menus.php"); ?>
+    <?php require("require/menus.php"); ?>
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
@@ -40,7 +38,7 @@
 <!-- /#wrapper -->
 
 <!-- Bootstrap core JavaScript -->
-<?php include("include/js.php"); ?>
+<?php require("require/js.php"); ?>
 
 </body>
 
