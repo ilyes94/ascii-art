@@ -4,9 +4,10 @@ $(document).ready(function(){
         $("#affichage").load("ascii_art/"+$(this).attr('name')+".txt");
     })
     //Afficher dans modif.php
-
     $("#liste_modif").change( function(){
         displayModifAscii();
+        $("#nModif").val($('#liste_modif').val());
+        $("#nModif").css('textTransform', 'capitalize');
         $("#modif").load("ascii_art/"+$('#liste_modif').val()+".txt");
     })
 })
@@ -14,7 +15,8 @@ $(document).ready(function(){
 function displayModifAscii(){
     $('#ascii_modif').html(
         '<div class="form-group">' +
-            '<input class="form-control" type="text" name="newname" placeholder="Nouveau nom" required>' +
+            '<label>Noveau nom</label>' +
+            '<input id="nModif" class="form-control" type="text" name="newname" placeholder="Nouveau nom" required>' +
         '</div>' +
         '<label>Modifier l\'ASCII</label>' + 
         '<div class="form-group">'+ 

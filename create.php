@@ -25,7 +25,7 @@
                 fclose($f);
                 header('Location: explore.php');
             }
-            //verification du fichier
+            //Verification du fichier
             elseif (isset($_POST['name'], $_FILES['ascii'])) {
                 $filename = strtolower($_POST['name']) . '.txt';
 
@@ -34,7 +34,7 @@
                 if (in_array($_FILES['ascii']['type'], $allowedMimeTypes) === false) {
                     exit("Il faut utiliser un fichier texte");
                 }
-                if ($_FILES['ascii']['size'] > $maxSize) {
+                if ($_FILES['ascii']['size'] > $maxSize) { 
                     exit("Le fichier est trop lourd. Merci de ne pas dépasser 10 Ko");
                 }
                 if (move_uploaded_file($_FILES['ascii']['tmp_name'], "./ascii_art/$filename") === false) {

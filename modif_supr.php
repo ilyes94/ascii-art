@@ -34,11 +34,13 @@ if (isset($_POST['newascii'])) {
     }
     fwrite($f, $newAscii);
     fclose($f);
+    header('Location: modif_supr.php');
 }
 // ---------------------Suppresion de l'ASCII -------------------------------------
 if ($action === 'del') {
     $filePath = $directory . '/' . $ascii . '.txt';
     unlink($filePath);
+    header('Location: modif_supr.php');
 }
 ?>
 <?php require("require/header.php"); ?>
@@ -56,6 +58,7 @@ if ($action === 'del') {
             <button class="btn btn-primary mx-2" type="submit" name="action" value="modif"><i class="fa fa-edit"></i> Modifier</button>
             <button class="btn btn-danger mx-2" type="submit" name="action" value="del"><i class="fa fa-trash"></i> Supprimer</button>
             <div class="my-2">
+                <label>Choisissez l'ASCII à modifier</label>
                 <select id="liste_modif" class="custom-select" name="ascii">
                     <option value="<?= $asciiEnModif = (isset($_POST['ascii'])) ? $ascii : '' ?>" selected>
                         <?= ucfirst($asciiEnModif = (isset($_POST['ascii'])) ? str_replace('_', ' ',ucfirst($ascii)) : "Choix de l'ASCII") ?></option>
